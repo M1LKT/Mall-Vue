@@ -17,7 +17,7 @@
             <span>{{item.intro}}</span>
           </div>
           <div class="goods-show-num">
-            已有<span>{{item.remarks}}</span>人评价
+            {{ $t('merchant.evaluated') }}<span>{{item.remarks}}</span>{{ $t('merchant.people') }}
           </div>
         </div>
       </div>

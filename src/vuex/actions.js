@@ -3,31 +3,31 @@ export const loadSeckillsInfo = ({ commit }) => {
   return new Promise((resolve, reject) => {
     const data = [
       {
-        intro: '【赠小风扇】维他 柠檬茶250ml*32盒 礼品装 整箱',
+        intro: 'seckillItem1',
         img: 'static/img/index/seckill/seckill-item1.jpg',
         price: 71.9,
         realPrice: 89.6
       },
       {
-        intro: 'Kindle Paperwhite 全新升级版6英寸护眼非反光电子墨水',
+        intro: 'seckillItem2',
         img: 'static/img/index/seckill/seckill-item2.jpg',
         price: 989.0,
         realPrice: 1299.0
       },
       {
-        intro: '粮悦 大吃兄糯米锅巴 安徽特产锅巴糯米原味400g*2盒',
+        intro: 'seckillItem3',
         img: 'static/img/index/seckill/seckill-item3.jpg',
         price: 21.8,
         realPrice: 49.0
       },
       {
-        intro: '【京东超市】清风（APP）抽纸 原木纯品金装系列 3层',
+        intro: 'seckillItem4',
         img: 'static/img/index/seckill/seckill-item4.jpg',
         price: 49.9,
         realPrice: 59.0
       },
       {
-        intro: 'NIKE耐克 男子休闲鞋 AIR MAX 90 ESSENTIAL 气垫',
+        intro: 'seckillItem5',
         img: 'static/img/index/seckill/seckill-item5.jpg',
         price: 559.9,
         realPrice: 759.9
@@ -53,15 +53,18 @@ export const loadCarouselItems = ({ commit }) => {
   return new Promise((resolve, reject) => {
     const data = {
       carouselItems: [
-        'static/img/nav/1.jpg',
-        'static/img/nav/2.jpg',
-        'static/img/nav/3.jpg',
-        'static/img/nav/4.jpg',
-        'static/img/nav/5.jpg'
+        'static/img/nav/7791235.jpg',
+        'static/img/nav/10143017.jpg',
+        'static/img/nav/10185284.jpg',
+        'static/img/nav/9759122.jpg',
+        'static/img/nav/cyber-monday-landing-page-template_23-2149733323.avif'
       ],
       activity: [
-        'static/img/nav/nav_showimg1.jpg',
-        'static/img/nav/nav_showimg2.jpg'
+        // 'static/img/nav/nav_showimg1.jpg',
+        // 'static/img/nav/nav_showimg2.jpg'
+
+        'static/img/nav/e-commerce-concept-facebook-template_23-2151243790.avif',
+        'static/img/nav/flat-11-11-singles-day-horizontal-banner-template_23-2149736442.jpg'
       ]
     };
     commit('SET_CAROUSELITEMS_INFO', data);
@@ -72,67 +75,69 @@ export const loadCarouselItems = ({ commit }) => {
 export const loadComputer = ({ commit }) => {
   return new Promise((resolve, reject) => {
     const computer = {
-      title: '电脑数码',
-      link: [ '电脑馆', '游戏极品', '装机大师', '职场焕新', '女神频道', '虚拟现实', '二合一平板', '电子教育', '万物周刊' ],
+      title: 'computer', // 用 key
+      link: [
+        'computerHall', 'game', 'diy', 'work', 'lady', 'vr', 'tablet', 'edu', 'weekly'
+      ],
       detail: [
         {
-          bigImg: 'static/img/index/computer/item-computer-1.jpg',
+          bigImg: 'static/img/index/computer/41YIoWkZn4L._SX300_SY300_QL70_FMwebp_.webp',
           itemFour: [
             {
-              title: '电脑馆',
-              intro: '笔记本999元限量秒！',
+              title: 'computerHall',
+              intro: 'notebookSale',
               img: 'static/img/index/computer/item-computer-2.jpg'
             },
             {
-              title: '外设装备',
-              intro: '1000减618',
+              title: 'peripheral',
+              intro: 'discount618',
               img: 'static/img/index/computer/item-computer-1-3.jpg'
             },
             {
-              title: '电脑配件',
-              intro: '联合满减最高省618',
+              title: 'parts',
+              intro: 'save618',
               img: 'static/img/index/computer/item-computer-1-4.jpg'
             },
             {
-              title: '办公生活',
-              intro: '5折神券 精品文具',
+              title: 'office',
+              intro: 'stationery',
               img: 'static/img/index/computer/item-computer-1-5.jpg'
             }
           ],
           itemContent: [
-            'static/img/index/computer/item-computer-1-6.jpg',
-            'static/img/index/computer/item-computer-1-7.jpg',
-            'static/img/index/computer/item-computer-1-8.jpg'
+            'static/img/index/computer/Frame 435.jpg',
+            'static/img/index/computer/Frame 4350.jpg',
+            'static/img/index/computer/Frame 4352.jpg'
           ]
         },
         {
-          bigImg: 'static/img/index/computer/item-computer-2-1.jpg',
+          bigImg: 'static/img/index/computer/94c6f11d-29c4-45e3-9de8-dab849092e5b.jpg',
           itemFour: [
             {
-              title: '平板电脑',
-              intro: '爆款平板12期免息',
+              title: 'tablet',
+              intro: 'tablet12free',
               img: 'static/img/index/computer/item-computer-2-2.jpg'
             },
             {
-              title: '智能酷玩',
-              intro: '抢999减666神券',
+              title: 'smart',
+              intro: 'coupon666',
               img: 'static/img/index/computer/item-computer-2-3.jpg'
             },
             {
-              title: '娱乐影音',
-              intro: '大牌耳机低至5折',
+              title: 'entertainment',
+              intro: 'headphone50',
               img: 'static/img/index/computer/item-computer-2-4.jpg'
             },
             {
-              title: '摄影摄像',
-              intro: '大牌相机5折抢',
+              title: 'camera',
+              intro: 'camera50',
               img: 'static/img/index/computer/item-computer-2-5.jpg'
             }
           ],
           itemContent: [
-            'static/img/index/computer/item-computer-2-6.jpg',
-            'static/img/index/computer/item-computer-2-7.jpg',
-            'static/img/index/computer/item-computer-2-8.jpg'
+            'static/img/index/computer/Frame 4353.jpg',
+            'static/img/index/computer/Frame 4343.jpg',
+            'static/img/index/computer/Frame 4342.jpg'
           ]
         }
       ]
@@ -145,67 +150,35 @@ export const loadComputer = ({ commit }) => {
 export const loadEat = ({ commit }) => {
   return new Promise((resolve, reject) => {
     const eat = {
-      title: '爱吃',
-      link: [ '休闲零食', '坚果', '牛奶', '饮料冲调', '食用油', '大米', '白酒', '红酒', '烧烤食材', '牛排', '樱桃' ],
+      title: 'eat', // 用 key
+      link: [ 'snack', 'nut', 'milk', 'drink', 'oil', 'rice', 'liquor', 'wine', 'bbq', 'steak', 'cherry' ],
       detail: [
         {
-          bigImg: 'static/img/index/eat/item-eat-1-1.jpg',
+          bigImg: 'static/img/index/eat/delicious-burger-food-menu-instagram-facebook-story-template_120329-4762.jpg',
           itemFour: [
-            {
-              title: '粮油调味',
-              intro: '买2免1',
-              img: 'static/img/index/eat/item-eat-1-2.jpg'
-            },
-            {
-              title: '饮料冲调',
-              intro: '第二件半价',
-              img: 'static/img/index/eat/item-eat-1-3.jpg'
-            },
-            {
-              title: '休闲零食',
-              intro: '满99减40',
-              img: 'static/img/index/eat/item-eat-1-4.jpg'
-            },
-            {
-              title: '中外名酒',
-              intro: '满199减100',
-              img: 'static/img/index/eat/item-eat-1-5.jpg'
-            }
+            { title: 'seasoning', intro: 'buy2free1', img: 'static/img/index/eat/item-eat-1-2.jpg' },
+            { title: 'drink', intro: 'half', img: 'static/img/index/eat/item-eat-1-3.jpg' },
+            { title: 'snack', intro: 'minus40', img: 'static/img/index/eat/item-eat-1-4.jpg' },
+            { title: 'wine', intro: 'minus100', img: 'static/img/index/eat/item-eat-1-5.jpg' }
           ],
           itemContent: [
-            'static/img/index/eat/item-eat-1-6.jpg',
-            'static/img/index/eat/item-eat-1-7.jpg',
-            'static/img/index/eat/item-eat-1-8.jpg'
+            'static/img/index/eat/61gffWaYtPL._AC_UL480_FMwebp_QL65_.webp',
+            'static/img/index/eat/61hnTXbICqL._AC_UL480_FMwebp_QL65_.webp',
+            'static/img/index/eat/81mABE1sNhL._AC_UL480_FMwebp_QL65_.webp'
           ]
         },
         {
-          bigImg: 'static/img/index/eat/item-eat-2-1.jpg',
+          bigImg: 'static/img/index/eat/special-food-menu-promotion-social-media-instagram-story-banner-template_159024-175.avif',
           itemFour: [
-            {
-              title: '东家菜',
-              intro: '丰富好味',
-              img: 'static/img/index/eat/item-eat-2-2.jpg'
-            },
-            {
-              title: '东家菜',
-              intro: '丰富好味',
-              img: 'static/img/index/eat/item-eat-2-2.jpg'
-            },
-            {
-              title: '东家菜',
-              intro: '丰富好味',
-              img: 'static/img/index/eat/item-eat-2-2.jpg'
-            },
-            {
-              title: '东家菜',
-              intro: '丰富好味',
-              img: 'static/img/index/eat/item-eat-2-2.jpg'
-            }
+            { title: 'homefood', intro: 'tasty', img: 'static/img/index/eat/item-eat-2-2.jpg' },
+            { title: 'homefood', intro: 'tasty', img: 'static/img/index/eat/item-eat-2-2.jpg' },
+            { title: 'homefood', intro: 'tasty', img: 'static/img/index/eat/item-eat-2-2.jpg' },
+            { title: 'homefood', intro: 'tasty', img: 'static/img/index/eat/item-eat-2-2.jpg' }
           ],
           itemContent: [
-            'static/img/index/eat/item-eat-2-6.jpg',
-            'static/img/index/eat/item-eat-2-7.jpg',
-            'static/img/index/eat/item-eat-2-8.jpg'
+            'static/img/index/eat/Frame 4347.jpg',
+            'static/img/index/eat/Frame 4348.jpg',
+            'static/img/index/eat/Frame 4349.jpg'
           ]
         }
       ]
@@ -221,10 +194,10 @@ export const loadGoodsInfo = ({ commit }) => {
     setTimeout(() => {
       const data = {
         goodsImg: [
-          'static/img/goodsDetail/item-detail-1.jpg',
-          'static/img/goodsDetail/item-detail-2.jpg',
-          'static/img/goodsDetail/item-detail-3.jpg',
-          'static/img/goodsDetail/item-detail-4.jpg'
+          'static/img/goodsDetail/71w6g8Z3+aL._AC_SX679_.jpg',
+          'static/img/goodsDetail/71kT+055L0L._AC_SX679_.jpg',
+          'static/img/goodsDetail/71nkTNqDLwL._AC_SX679_.jpg',
+          'static/img/goodsDetail/71PxHn6fzlL._AC_SX679_.jpg'
         ],
         title: '苹果8/7手机壳iPhone7 Plus保护壳全包防摔磨砂硬外壳',
         tags: ['满69-20元', '关注产品★送钢化膜', 'BIT配次日达'],
@@ -291,7 +264,7 @@ export const loadGoodsInfo = ({ commit }) => {
             sale: 165076
           },
           {
-            img: 'static/img/goodsDetail/hot/2.jpg',
+            img: 'static/img/goodsDetail/hot/81km6VdyE2L._AC_UY327_FMwebp_QL65_.webp',
             price: 36.0,
             sale: 135078
           },
@@ -301,12 +274,12 @@ export const loadGoodsInfo = ({ commit }) => {
             sale: 105073
           },
           {
-            img: 'static/img/goodsDetail/hot/4.jpg',
+            img: 'static/img/goodsDetail/hot/71JE46ZDflL._AC_UY327_FMwebp_QL65_.webp',
             price: 39.0,
             sale: 95079
           },
           {
-            img: 'static/img/goodsDetail/hot/5.jpg',
+            img: 'static/img/goodsDetail/hot/816B7MObvxL._AC_UY327_FMwebp_QL65_.webp',
             price: 25.0,
             sale: 5077
           },
@@ -317,46 +290,46 @@ export const loadGoodsInfo = ({ commit }) => {
           }
         ],
         goodsDetail: [
-          'static/img/goodsDetail/intro/1.jpg',
-          'static/img/goodsDetail/intro/2.jpg',
-          'static/img/goodsDetail/intro/3.jpg',
-          'static/img/goodsDetail/intro/4.jpg'
+          'static/img/goodsDetail/intro/4783041f-04e8-427e-a32b-84588b24fab7.__CR0,0,1464,600_PT0_SX1464_V1___.jpg',
+          'static/img/goodsDetail/intro/17af3505-ad45-461b-b477-ec765dffd959.__CR0,0,1464,600_PT0_SX1464_V1___.jpg',
+          'static/img/goodsDetail/intro/aeff29e3-ad6a-4557-ba1c-511331c9547f.__CR0,0,1464,600_PT0_SX1464_V1___.jpg',
+          'static/img/goodsDetail/intro/c8eb1e48-1295-4c68-8178-cbbf47cf94ca.__CR0,0,1464,600_PT0_SX1464_V1___.jpg'
         ],
         param: [
           {
-            title: '商品名称',
+            title: 'goodsDetail.paramName',
             content: 'iPhone 7手机壳'
           },
           {
-            title: '商品编号',
+            title: 'goodsDetail.paramId',
             content: '10435663237'
           },
           {
-            title: '店铺',
+            title: 'goodsDetail.paramShop',
             content: 'Gavin Shop'
           },
           {
-            title: '商品毛重',
+            title: 'goodsDetail.paramWeight',
             content: '100.00g'
           },
           {
-            title: '商品产地',
+            title: 'goodsDetail.paramOrigin',
             content: '中国大陆'
           },
           {
-            title: '机型',
+            title: 'goodsDetail.paramModel',
             content: 'iPhone 7'
           },
           {
-            title: '材质',
+            title: 'goodsDetail.paramMaterial',
             content: 'PC/塑料'
           },
           {
-            title: '款式',
+            title: 'goodsDetail.paramStyle',
             content: '软壳'
           },
           {
-            title: '适用人群',
+            title: 'goodsDetail.paramCrowd',
             content: '通用'
           }
         ],
@@ -424,175 +397,175 @@ export const loadGoodsList = ({ commit }) => {
       const data = {
         asItems: [
           {
-            img: 'static/img/goodsList/item-as-img-1.jpg',
+            img: 'static/img/goodsList/item-as-img-1.jfif',
             price: 39.9,
-            intro: 'SKSK 苹果7/7plus手机壳 iPhone 7 Plus保护套全包硬',
+            intro: 'asItem1',
             num: 3140,
             sale: 9000
           },
           {
             img: 'static/img/goodsList/item-as-img-2.jpg',
             price: 36.6,
-            intro: '狮普 苹果7/7 Plus手机壳 电镀 超薄 全包 防摔 保护外',
+            intro: 'asItem2',
             num: 6160,
             sale: 8900
           },
           {
-            img: 'static/img/goodsList/item-as-img-1.jpg',
+            img: 'static/img/goodsList/item-as-img-1.jfif',
             price: 38.6,
-            intro: 'SKSK 苹果7/7plus手机壳 iPhone 7 Plus保护套全包硬',
+            intro: 'asItem3',
             num: 9160,
             sale: 8800
           },
           {
             img: 'static/img/goodsList/item-as-img-2.jpg',
             price: 35.6,
-            intro: '狮普 苹果7/7 Plus手机壳 电镀 超薄 全包 防摔 保护外',
+            intro: 'asItem4',
             num: 6160,
             sale: 7990
           },
           {
-            img: 'static/img/goodsList/item-as-img-1.jpg',
+            img: 'static/img/goodsList/item-as-img-1.jfif',
             price: 38.6,
-            intro: 'SKSK 苹果7/7plus手机壳 iPhone 7 Plus保护套全包硬',
+            intro: 'asItem5',
             num: 9160,
             sale: 7600
           },
           {
             img: 'static/img/goodsList/item-as-img-2.jpg',
             price: 35.6,
-            intro: '狮普 苹果7/7 Plus手机壳 电镀 超薄 全包 防摔 保护外',
+            intro: 'asItem6',
             num: 6160,
             sale: 6900
           }
         ],
         goodsList: [
           {
-            img: 'static/img/goodsList/item-show-1.jpg',
+            img: 'static/img/goodsList/item-show-1.jfif',
             price: 36.60,
-            intro: 'SKSK 苹果7/7plus手机壳 iPhone 7 Plus保护套全包硬壳男女磨砂防摔 火影红(苹',
+            intro: 'goodsItem1',
             remarks: 6160,
-            shopName: '元亨利配件专营店',
+            shopName: 'shop1',
             sale: 9900
           },
           {
             img: 'static/img/goodsList/item-show-2.jpg',
             price: 28.00,
-            intro: '蒙奇奇 苹果6s手机壳磨砂防摔保护套 适用于iphone6/6s/6sPlus/6plus 6/6s 4.7英',
+            intro: 'goodsItem2',
             remarks: 3000,
-            shopName: 'monqiqi旗舰店',
+            shopName: 'shop2',
             sale: 9600
           },
           {
             img: 'static/img/goodsList/item-show-3.jpg',
             price: 15.00,
-            intro: 'BIAZE 苹果6/6s手机壳 苹果iphone6s 4.7英寸透明手机套 清爽系列',
+            intro: 'goodsItem3',
             remarks: 2800,
-            shopName: 'BIAZE官方旗舰店',
+            shopName: 'shop3',
             sale: 8900
           },
           {
             img: 'static/img/goodsList/item-show-4.jpg',
             price: 29.90,
-            intro: '慕臣 苹果6s手机壳全包防摔磨砂软保护套男女 适用于iPhone6splus',
+            intro: 'goodsItem4',
             remarks: 9000,
-            shopName: '歌乐力手配专营店',
+            shopName: 'shop4',
             sale: 8600
           },
           {
             img: 'static/img/goodsList/item-show-5.jpg',
             price: 15.00,
-            intro: 'BIAZE 苹果6/6s手机壳 苹果iphone6s 4.7英寸透明手机套 清爽系列',
+            intro: 'goodsItem5',
             remarks: 6160,
-            shopName: 'BIAZE官方旗舰店',
+            shopName: 'shop3',
             sale: 8560
           },
           {
-            img: 'static/img/goodsList/item-show-6.jpg',
+            img: 'static/img/goodsList/12400237309_291903970.jpg',
             price: 28.00,
-            intro: '慕臣 苹果6s手机壳全包防摔磨砂软保护套男女 适用于iPhone6splus',
+            intro: 'goodsItem6',
             remarks: 9006,
-            shopName: '歌乐力手配专营店',
+            shopName: 'shop4',
             sale: 8530
           },
           {
             img: 'static/img/goodsList/item-show-7.jpg',
             price: 15.00,
-            intro: 'BIAZE 苹果6/6s手机壳 苹果iphone6s 4.7英寸透明手机套 清爽系列',
+            intro: 'goodsItem7',
             remarks: 8666,
-            shopName: 'BIAZE官方旗舰店',
+            shopName: 'shop3',
             sale: 8360
           },
           {
             img: 'static/img/goodsList/item-show-8.jpg',
             price: 29.90,
-            intro: '慕臣 苹果6s手机壳全包防摔磨砂软保护套男女 适用于iPhone6splus',
+            intro: 'goodsItem8',
             remarks: 6080,
-            shopName: '歌乐力手配专营店',
+            shopName: 'shop4',
             sale: 7560
           },
           {
-            img: 'static/img/goodsList/item-show-1.jpg',
+            img: 'static/img/goodsList/item-show-1.jfif',
             price: 36.60,
-            intro: 'SKSK 苹果7/7plus手机壳 iPhone 7 Plus保护套全包硬壳男女磨砂防摔 火影红(苹',
+            intro: 'goodsItem1',
             remarks: 6160,
-            shopName: '元亨利配件专营店',
+            shopName: 'shop1',
             sale: 7360
           },
           {
             img: 'static/img/goodsList/item-show-2.jpg',
             price: 28.00,
-            intro: '蒙奇奇 苹果6s手机壳磨砂防摔保护套 适用于iphone6/6s/6sPlus/6plus 6/6s 4.7英',
+            intro: 'goodsItem2',
             remarks: 3000,
-            shopName: 'monqiqi旗舰店',
+            shopName: 'shop2',
             sale: 6960
           },
           {
             img: 'static/img/goodsList/item-show-3.jpg',
             price: 15.00,
-            intro: 'BIAZE 苹果6/6s手机壳 苹果iphone6s 4.7英寸透明手机套 清爽系列',
+            intro: 'goodsItem3',
             remarks: 2800,
-            shopName: 'BIAZE官方旗舰店',
+            shopName: 'shop3',
             sale: 6560
           },
           {
             img: 'static/img/goodsList/item-show-4.jpg',
             price: 29.90,
-            intro: '慕臣 苹果6s手机壳全包防摔磨砂软保护套男女 适用于iPhone6splus',
+            intro: 'goodsItem4',
             remarks: 9000,
-            shopName: '歌乐力手配专营店',
+            shopName: 'shop4',
             sale: 6360
           },
           {
             img: 'static/img/goodsList/item-show-5.jpg',
             price: 15.00,
-            intro: 'BIAZE 苹果6/6s手机壳 苹果iphone6s 4.7英寸透明手机套 清爽系列',
+            intro: 'goodsItem5',
             remarks: 6160,
-            shopName: 'BIAZE官方旗舰店',
+            shopName: 'shop3',
             sale: 5530
           },
           {
-            img: 'static/img/goodsList/item-show-6.jpg',
+            img: 'static/img/goodsList/12400237309_291903970.jpg',
             price: 28.00,
-            intro: '慕臣 苹果6s手机壳全包防摔磨砂软保护套男女 适用于iPhone6splus',
+            intro: 'goodsItem6',
             remarks: 9006,
-            shopName: '歌乐力手配专营店',
+            shopName: 'shop4',
             sale: 5560
           },
           {
             img: 'static/img/goodsList/item-show-7.jpg',
             price: 15.00,
-            intro: 'BIAZE 苹果6/6s手机壳 苹果iphone6s 4.7英寸透明手机套 清爽系列',
+            intro: 'goodsItem7',
             remarks: 8666,
-            shopName: 'BIAZE官方旗舰店',
+            shopName: 'shop3',
             sale: 5260
           },
           {
             img: 'static/img/goodsList/item-show-8.jpg',
             price: 29.90,
-            intro: '慕臣 苹果6s手机壳全包防摔磨砂软保护套男女 适用于iPhone6splus',
+            intro: 'goodsItem8',
             remarks: 6080,
-            shopName: '歌乐力手配专营店',
+            shopName: 'shop4',
             sale: 3560
           }
         ]

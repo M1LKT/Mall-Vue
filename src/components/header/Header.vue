@@ -5,12 +5,17 @@
         <li>
           <Dropdown  placement="bottom-start">
             <a href="javascript:void(0)">
-              <Icon type="ios-location" class="icon"></Icon> {{city}}
+              <Icon type="ios-location" class="icon"></Icon> {{$t('city.' + city)}}
             </a>
             <DropdownMenu slot="list">
               <div class="city">
                 <p v-for="(items, index) in cityArr" :key="index">
-                  <span v-for="(item, index) in items"  class="city-item" :key="index" @click="changeCity(item)">{{item}}</span>
+                    <span
+                      v-for="(item, idx) in items"
+                      class="city-item"
+                      :key="idx"
+                      @click="changeCity(item)"
+                    >{{$t('city.' + item)}}</span>
                 </p>
               </div>
             </DropdownMenu>
@@ -19,7 +24,15 @@
       </ul>
       <ul class="detail">
         <li class="first" v-show="!userInfo.username">
-          你好，请<router-link to="/login">登录 <Icon type="person"></Icon></router-link> |<span class="text-color-red"><router-link to="/SignUp">免费注册 <Icon type="person-add"></Icon></router-link></span>
+          {{ $t('header.hello') }}
+          <router-link to="/login">
+            {{ $t('header.login') }} <Icon type="person"></Icon>
+          </router-link>
+          |<span class="text-color-red">
+            <router-link to="/SignUp">
+              {{ $t('header.register') }} <Icon type="person-add"></Icon>
+            </router-link>
+          </span>
         </li>
         <li v-show="!!userInfo.username">
           <Dropdown>
@@ -30,11 +43,11 @@
                 <div class="my-page">
                   <div class="my-info" @click="myInfo">
                     <Icon type="home"></Icon>
-                    <p>我的主页</p>
+                    <p>{{ $t('header.myHome') }}</p>
                   </div>
                   <div class="sign-out" @click="signOutFun">
                     <Icon type="log-out"></Icon>
-                    <p>退出登录</p>
+                    <p>{{ $t('header.logout') }}</p>
                   </div>
                 </div>
             </DropdownMenu>
@@ -43,53 +56,72 @@
         <li>
           <Dropdown  placement="bottom-start">
             <a href="javascript:void(0)">
-              <Icon type="ios-cart-outline"></Icon> 购物车
+              <Icon type="ios-cart-outline"></Icon>  {{ $t('header.cart') }}
             </a>
             <DropdownMenu slot="list">
               <div class="shopping-cart-null" v-show="shoppingCart.length <= 0">
                 <Icon type="ios-cart-outline" class="cart-null-icon"></Icon>
-                <span>你的购物车没有空空哦</span>
-                <span>赶快去添加商品吧~</span>
+                  <span>{{ $t('header.cartEmpty') }}</span>
+                  <span>{{ $t('header.cartAdd') }}</span>
               </div>
               <div class="shopping-cart-list" v-show="shoppingCart.length > 0">
                 <div class="shopping-cart-box" v-for="(item,index) in shoppingCart" :key="index">
                   <div class="shopping-cart-img">
                     <img :src="item.img">
                   </div>
-                  <div class="shopping-cart-info">
-                    <div class="shopping-cart-title">
-                      <p>{{item.title.substring(0, 22)}}...</p>
-                    </div>
-                    <div class="shopping-cart-detail">
-                      <p>
-                        套餐:
-                        <span class="shopping-cart-text">
-                          {{item.package}}
-                        </span>
-                        数量:
-                        <span class="shopping-cart-text">
-                          {{item.count}}
-                        </span>
-                        价钱:
-                        <span class="shopping-cart-text">
-                          {{item.price}}
-                        </span>
-                      </p>
-                    </div>
+                 <div class="shopping-cart-info">
+                  <div class="shopping-cart-title">
+                    <p>{{item.title.substring(0, 22)}}...</p>
                   </div>
+                  <div class="shopping-cart-detail">
+                    <p>
+                      {{ $t('header.package') }}:
+                      <span class="shopping-cart-text">
+                        {{item.package}}
+                      </span>
+                      {{ $t('header.count') }}:
+                      <span class="shopping-cart-text">
+                        {{item.count}}
+                      </span>
+                      {{ $t('header.price') }}:
+                      <span class="shopping-cart-text">
+                        {{item.price}}
+                      </span>
+                    </p>
+                  </div>
+                </div>
                 </div>
                 <div class="go-to-buy">
                   <Button type="error" size="small" @click="goToPay">
-                    去结账
+                    {{ $t('header.cartGoPay') }}
                   </Button>
                 </div>
               </div>
             </DropdownMenu>
           </Dropdown>
         </li>
-        <li><router-link to="/">网站导航</router-link></li>
-        <li><router-link to="/freeback">意见反馈</router-link></li>
-        <li><router-link to="/">商城首页</router-link></li>
+        <!-- <li><router-link to="/">{{ $t('header.nav.guide') }}</router-link></li> -->
+        <li><router-link to="/freeback">{{ $t('header.nav.feedback') }}</router-link></li>
+        <li><router-link to="/">{{ $t('header.nav.home') }}</router-link></li>
+        <li>
+          <el-dropdown>
+              <!-- <a>{{ $t('header.nav.switchLang') }}</a> -->
+              <a>
+                {{ optionLang[$i18n.locale] }}
+                <i class="el-icon-arrow-down el-icon--right"></i>
+              </a>
+            <el-dropdown-menu slot="dropdown" class="dropdownMenu">
+              <el-dropdown-item v-for="(item, index) in $i18n.availableLocales" @click="changeLanguage(item)" :key="index">
+                <span
+                  @click="changeLanguage(item)"
+                  :class="{ 'lang-active': $i18n.locale === item }"
+                >
+                  {{optionLang[item]}}
+                </span>
+              </el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </li>
       </ul>
     </div>
   </div>
@@ -98,6 +130,7 @@
 <script>
 import store from '@/vuex/store';
 import { mapState, mapActions } from 'vuex';
+import optionLang from '@/lang/optionLang';
 export default {
   name: 'M-Header',
   created () {
@@ -111,7 +144,8 @@ export default {
         ['深圳', '河南', '辽宁', '吉林', '江苏'],
         ['江西', '四川', '海南', '贵州', '云南'],
         ['西藏', '陕西', '甘肃', '青海', '珠海']
-      ]
+      ],
+      optionLang: optionLang.optionLanguage
     };
   },
   computed: {
@@ -131,6 +165,10 @@ export default {
     signOutFun () {
       this.signOut();
       this.$router.push('/');
+    },
+    changeLanguage (lang) {
+      this.$i18n.locale = lang;
+      localStorage.setItem('lang', lang);
     }
   },
   store
@@ -311,5 +349,22 @@ export default {
 }
 .sign-out p {
   font-size: 12px;
+}
+.lang-active {
+  color: #d9534f;
+  font-weight: bold;
+}
+</style>
+
+<style>
+.el-popper.dropdownMenu {
+  /* background-color: red; */
+  border: 1px solid #fff;
+}
+.el-popper.dropdownMenu .el-dropdown-menu__item {
+  color: #999999 !important; /* 下拉菜单文字颜色 */
+}
+.el-popper.dropdownMenu .el-dropdown-menu__item:not(.is-disabled):hover {
+  color: #d9534f !important;
 }
 </style>

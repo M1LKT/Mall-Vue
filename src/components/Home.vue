@@ -12,24 +12,24 @@
           <Submenu name="1">
             <template slot="title">
                 <Icon type="location"></Icon>
-                <span>收货地址</span>
+                <span>{{ $t('home.address') }}</span>
             </template>
-            <MenuItem name="myAddress">我的收货地址</MenuItem>
-            <MenuItem name="addAddress">添加收货地址</MenuItem>
+            <MenuItem name="myAddress">{{ $t('home.myAddress') }}</MenuItem>
+            <MenuItem name="addAddress">{{ $t('home.addAddress') }}</MenuItem>
           </Submenu>
           <Submenu name="2">
             <template slot="title">
                 <Icon type="clipboard"></Icon>
-                <span>购物订单</span>
+                <span>{{ $t('home.order') }}</span>
             </template>
-            <MenuItem name="myOrder">我的订单</MenuItem>
+            <MenuItem name="myOrder">{{ $t('home.myOrder') }}</MenuItem>
           </Submenu>
           <Submenu name="3">
             <template slot="title">
                 <Icon type="ios-cart"></Icon>
-                <span>购物车</span>
+                <span>{{ $t('home.cart') }}</span>
             </template>
-            <MenuItem name="myShoppingCart">我的购物车</MenuItem>
+            <MenuItem name="myShoppingCart">{{ $t('home.myShoppingCart') }}</MenuItem>
           </Submenu>
         </Menu>
       </Sider>
@@ -53,14 +53,30 @@ export default {
   name: 'Home',
   data () {
     return {
-      activeTitle: '我的订单',
+      activeTitle: this.$t('home.myOrder'),
       bar: {
-        'myAddress': '我的收货地址',
-        'addAddress': '添加收货地址',
-        'myOrder': '我的订单',
-        'myShoppingCart': '我的购物车'
+        'myAddress': this.$t('home.myAddress'),
+        'addAddress': this.$t('home.addAddress'),
+        'myOrder': this.$t('home.myOrder'),
+        'myShoppingCart': this.$t('home.myShoppingCart')
       }
     };
+  },
+  watch: {
+    // 语言切换时，动态更新菜单标题
+    '$i18n.locale' () {
+      this.bar = {
+        'myAddress': this.$t('home.myAddress'),
+        'addAddress': this.$t('home.addAddress'),
+        'myOrder': this.$t('home.myOrder'),
+        'myShoppingCart': this.$t('home.myShoppingCart')
+      };
+      // 同步更新当前标题
+      const currentKey = Object.keys(this.bar).find(key => this.bar[key] === this.activeTitle);
+      if (currentKey) {
+        this.activeTitle = this.bar[currentKey];
+      }
+    }
   },
   methods: {
     onSelect (name) {

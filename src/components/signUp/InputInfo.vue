@@ -1,19 +1,19 @@
 <template>
   <div class="info-form">
      <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="80" >
-        <FormItem label="用户名" prop="name">
-            <i-input v-model="formValidate.name" clearable size="large" placeholder="请输入你的姓名"></i-input>
+        <FormItem :label="$t('inputInfo.name')" prop="name">
+            <i-input v-model="formValidate.name" clearable size="large" :placeholder="$t('inputInfo.namePlaceholder')"></i-input>
         </FormItem>
-        <FormItem label="邮箱" prop="mail">
-            <i-input v-model="formValidate.mail" clearable size="large" placeholder="请输入你的邮箱"></i-input>
+        <FormItem :label="$t('inputInfo.mail')" prop="mail">
+            <i-input v-model="formValidate.mail" clearable size="large" :placeholder="$t('inputInfo.mailPlaceholder')"></i-input>
         </FormItem>
-        <FormItem label="密码" prop="password">
-            <i-input type="password" v-model="formValidate.password" clearable size="large" placeholder="请输入你的密码"></i-input>
+        <FormItem :label="$t('inputInfo.password')" prop="password">
+            <i-input type="password" v-model="formValidate.password" clearable size="large" :placeholder="$t('inputInfo.passwordPlaceholder')"></i-input>
         </FormItem>
-        <FormItem label="确认密码" prop="repassword">
-            <i-input type="password" v-model="formValidate.repassword" clearable size="large" placeholder="请再次输入你的密码"></i-input>
+        <FormItem :label="$t('inputInfo.repassword')" prop="repassword">
+            <i-input type="password" v-model="formValidate.repassword" clearable size="large" :placeholder="$t('inputInfo.repasswordPlaceholder')"></i-input>
         </FormItem>
-        <Button type="error" size="large" long @click="handleSubmit('formValidate')">注册</Button>
+        <Button type="error" size="large" long @click="handleSubmit('formValidate')">{{ $t('inputInfo.register') }}</Button>
     </Form>
   </div>
 </template>
@@ -26,9 +26,9 @@ export default {
   data () {
     const validatePassCheck = (rule, value, callback) => {
       if (value === '') {
-        callback(new Error('请再次输入密码'));
+        callback(new Error(this.$t('inputInfo.repasswordRequired')));
       } else if (value !== this.formValidate.password) {
-        callback(new Error('两次输入的密码不一样'));
+        callback(new Error(this.$t('inputInfo.passwordNotMatch')));
       } else {
         callback();
       }
@@ -42,21 +42,30 @@ export default {
       },
       ruleValidate: {
         name: [
-          { required: true, message: '用户名不能为空', trigger: 'blur' }
+          { required: true, message: this.$t('inputInfo.nameRequired'), trigger: 'blur' }
         ],
         mail: [
-          { required: true, message: '邮箱不能为空', trigger: 'blur' },
-          { type: 'email', message: '邮箱格式错误', trigger: 'blur' }
+          { required: true, message: this.$t('inputInfo.mailRequired'), trigger: 'blur' },
+          { type: 'email', message: this.$t('inputInfo.mailFormatError'), trigger: 'blur' }
         ],
         password: [
-          { required: true, message: '密码不能为空', trigger: 'blur' },
-          { type: 'string', min: 6, message: '密码长度不能小于6', trigger: 'blur' }
+          { required: true, message: this.$t('inputInfo.passwordRequired'), trigger: 'blur' },
+          { type: 'string', min: 6, message: this.$t('inputInfo.passwordMin'), trigger: 'blur' }
         ],
         repassword: [
           { validator: validatePassCheck, trigger: 'blur' }
         ]
       }
     };
+  },
+  watch: {
+    '$i18n.locale' () {
+      this.ruleValidate.name[0].message = this.$t('inputInfo.nameRequired');
+      this.ruleValidate.mail[0].message = this.$t('inputInfo.mailRequired');
+      this.ruleValidate.mail[1].message = this.$t('inputInfo.mailFormatError');
+      this.ruleValidate.password[0].message = this.$t('inputInfo.passwordRequired');
+      this.ruleValidate.password[1].message = this.$t('inputInfo.passwordMin');
+    }
   },
   methods: {
     ...mapMutations(['SET_SIGN_UP_SETP']),
@@ -65,7 +74,7 @@ export default {
       const father = this;
       this.$refs[name].validate((valid) => {
         if (valid) {
-          this.$Message.success('注册成功');
+          this.$Message.success(this.$t('inputInfo.registerSuccess'));
           const userinfo = {
             username: this.formValidate.name,
             password: this.formValidate.password,
@@ -76,7 +85,7 @@ export default {
           father.SET_SIGN_UP_SETP(2);
           this.$router.push({ path: '/SignUp/signUpDone' });
         } else {
-          this.$Message.error('注册失败');
+          this.$Message.error(this.$t('inputInfo.registerFail'));
         }
       });
     }

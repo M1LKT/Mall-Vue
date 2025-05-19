@@ -2,9 +2,9 @@
   <div>
     <div class="pay-container">
       <Alert show-icon>
-        扫码支付
+        {{ $t('pay.scanPay') }}
         <Icon type="qr-scanner" slot="icon"></Icon>
-        <template slot="desc">请扫描右边二维码进行支付</template>
+        <template slot="desc">{{ $t('pay.scanTip') }}</template>
       </Alert>
       <div class="pay-box">
         <div class="pay-demo">
@@ -13,7 +13,7 @@
         <div class="pay-qr-scan">
           <img src="static/img/pay/pay-qrscan.png">
           <div class="pay-tips">
-            <router-link to="/payDone"><p>点击我, 完成支付</p></router-link>
+            <router-link to="/payDone"><p>{{ $t('pay.finishPay') }}</p></router-link>
           </div>
         </div>
       </div>

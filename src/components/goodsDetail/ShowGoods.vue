@@ -13,40 +13,40 @@
       </div>
       <div class="item-detail-right">
         <div class="item-detail-title">
-          <p>
-            <span class="item-detail-express">校园配送</span> {{goodsInfo.title}}</p>
+            <p>
+            <span class="item-detail-express">{{ $t('showGoods.express') }}</span> {{ $t('showGoods.title') }}</p>
         </div>
         <div class="item-detail-tag">
           <p>
-            <span v-for="(item,index) in goodsInfo.tags" :key="index">【{{item}}】</span>
+            <span v-for="(item,index) in goodsInfo.tags" :key="index">【{{ $t('showGoods.tags.' + index) }}】</span>
           </p>
         </div>
         <div class="item-detail-price-row">
           <div class="item-price-left">
             <div class="item-price-row">
               <p>
-                <span class="item-price-title">B I T 价</span>
+                <span class="item-price-title">{{ $t('showGoods.bitPrice') }}</span>
                 <span class="item-price">￥{{price.toFixed(2)}}</span>
               </p>
             </div>
             <div class="item-price-row">
               <p>
-                <span class="item-price-title">优 惠 价</span>
-                <span class="item-price-full-cut" v-for="(item,index) in goodsInfo.discount" :key="index">{{item}}</span>
+                <span class="item-price-title">{{ $t('showGoods.discountPrice') }}</span>
+                <span class="item-price-full-cut" v-for="(item,index) in goodsInfo.discount" :key="index">{{ $t('showGoods.discount.' + index) }}</span>
               </p>
             </div>
             <div class="item-price-row">
               <p>
-                <span class="item-price-title">促&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销</span>
-                <span class="item-price-full-cut" v-for="(item,index) in goodsInfo.promotion" :key="index">{{item}}</span>
+                <span class="item-price-title">{{ $t('showGoods.promotion') }}</span>
+                <span class="item-price-full-cut" v-for="(item,index) in goodsInfo.promotion" :key="index">{{ $t('showGoods.promotions.' + index) }}</span>
               </p>
             </div>
           </div>
           <div class="item-price-right">
             <div class="item-remarks-sum">
-              <p>累计评价</p>
+              <p>{{ $t('showGoods.totalRemarks') }}</p>
               <p>
-                <span class="item-remarks-num">{{goodsInfo.remarksNum}} 条</span>
+                <span class="item-remarks-num">{{goodsInfo.remarksNum}} {{ $t('showGoods.remarksUnit') }}</span>
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@
         <!-- 选择颜色 -->
         <div class="item-select">
           <div class="item-select-title">
-            <p>选择颜色</p>
+            <p>{{ $t('showGoods.selectColor') }}</p>
           </div>
           <div class="item-select-column">
             <div class="item-select-row" v-for="(items, index) in goodsInfo.setMeal" :key="index">
@@ -63,7 +63,7 @@
                   <img :src="item.img" alt="">
                 </div>
                 <div class="item-select-intro">
-                  <p>{{item.intro}}</p>
+                  <p>{{ $t('showGoods.setMeal.' + index + '.' + index1) }}</p>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@
         <!-- 白条分期 -->
         <div class="item-select">
           <div class="item-select-title">
-            <p>白条分期</p>
+            <p>{{ $t('showGoods.selectColor') }}</p>
           </div>
           <div class="item-select-row">
             <div class="item-select-class" v-for="(item,index) in hirePurchase" :key="index">
@@ -86,7 +86,7 @@
         <div class="add-buy-car-box">
           <div class="add-buy-car">
             <InputNumber :min="1" v-model="count" size="large"></InputNumber>
-            <Button type="error" size="large" @click="addShoppingCartBtn()">加入购物车</Button>
+            <Button type="error" size="large" @click="addShoppingCartBtn()">{{ $t('showGoods.addToCart') }}</Button>
           </div>
         </div>
       </div>
@@ -116,24 +116,24 @@ export default {
       const twentyFour = this.price * this.count / 24 * 1.005;
       return [
         {
-          tooltip: '无手续费',
-          type: '不分期'
+          tooltip: 'showGoods.noFee',
+          type: this.$t('showGoods.noInstallment')
         },
         {
-          tooltip: '无手续费',
-          type: `￥${three.toFixed(2)} x 3期`
+          tooltip: 'showGoods.noFee',
+          type: `￥${three.toFixed(2)} x 3${this.$t('showGoods.period')}`
         },
         {
-          tooltip: '无手续费',
-          type: `￥${sex.toFixed(2)} x 6期`
+          tooltip: 'showGoods.noFee',
+          type: `￥${sex.toFixed(2)} x 6${this.$t('showGoods.period')}`
         },
         {
-          tooltip: '含手续费：费率0.25%起，￥0.1起×12期',
-          type: `￥${twelve.toFixed(2)} x 12期`
+          tooltip: 'showGoods.fee12',
+          type: `￥${twelve.toFixed(2)} x 12${this.$t('showGoods.period')}`
         },
         {
-          tooltip: '含手续费：费率0.5%起，￥0.1起×12期',
-          type: `￥${twentyFour.toFixed(2)} x 24期`
+          tooltip: 'showGoods.fee24',
+          type: `￥${twentyFour.toFixed(2)} x 24${this.$t('showGoods.period')}`
         }
       ];
     }

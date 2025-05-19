@@ -6,15 +6,15 @@
       </i-col>
       <i-col span="8" class="box">
         <div class="sign-up-title">
-          <h1>欢迎注册账号</h1>
+          <h1>{{ $t('signUp.welcome') }}</h1>
           <br>
-          <h2>BIT MALL, 天天低价品质保证, 让消费者钱更值钱</h2>
+          <h2 :class="{'en-slogan': isEnLang}">{{ $t('signUp.slogan') }}</h2>
         </div>
         <div class="sing-up-step-box">
           <Steps :current="signUpStep">
-              <Step title="验证手机号" icon="iphone"></Step>
-              <Step title="填写账号信息" icon="person-add"></Step>
-              <Step title="注册成功" icon="ios-checkmark-outline"></Step>
+              <Step :title="$t('signUp.step1')" icon="iphone"></Step>
+              <Step :title="$t('signUp.step2')" icon="person-add"></Step>
+              <Step :title="$t('signUp.step3')" icon="ios-checkmark-outline"></Step>
           </Steps>
           <div class="sign-up-box">
             <transition mode="out-in">
@@ -40,7 +40,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(['signUpStep'])
+    ...mapState(['signUpStep']),
+    isEnLang () {
+      return document.body.classList.contains('lang-en');
+    }
   },
   methods: {
     ...mapMutations(['SET_SIGN_UP_SETP'])
@@ -85,5 +88,8 @@ export default {
   width: 350px;
   display: flex;
   align-items: center;
+}
+.en-slogan {
+  font-size: 14px;
 }
 </style>

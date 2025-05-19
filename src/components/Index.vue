@@ -12,17 +12,17 @@
             <img src="static/img/index/clock.png">
           </div>
           <div class="seckill-text">
-            <span class="seckill-title">限时秒杀</span>
-            <span class="seckill-remarks">总有你想不到的低价</span>
+            <span class="seckill-title">{{ $t('seckill.seckillTitle') }}</span>
+            <span class="seckill-remarks">{{ $t('seckill.seckillRemark') }}</span>
           </div>
           <div class="count-down">
-            <span class="count-down-text">当前场次</span>
+            <span class="count-down-text">{{ $t('seckill.currentSession') }}</span>
             <span class="count-down-num count-down-hour">{{ seckillsHours }}</span>
             <span class="count-down-point">:</span>
             <span class="count-down-num count-down-minute">{{ seckillsMinutes }}</span>
             <span class="count-down-point">:</span>
             <span class="count-down-num count-down-seconds">{{ seckillsSeconds }}</span>
-            <span class="count-down-text">后结束抢购</span>
+            <span class="count-down-text">{{ $t('seckill.endText') }}</span>
           </div>
         </div>
         <!-- 内容 -->
@@ -32,7 +32,7 @@
               <router-link to="/goodsList"><img :src="item.img"></router-link>
             </div>
             <div class="seckill-item-info">
-              <p>{{item.intro}}</p>
+              <p>{{ $t('seckill.goodsList.' + item.intro) }}</p>
               <p>
                 <span class="seckill-price text-danger"><Icon type="social-yen"></Icon>{{item.price}}</span>
                 <span class="seckill-old-price"><s>{{item.realPrice}}</s></span>
@@ -44,10 +44,10 @@
       <!-- 电脑专场 -->
       <div class="item-class">
         <div class="item-class-head">
-          <span class="item-class-title">{{computer.title}}</span>
+          <span class="item-class-title">{{ $t('seckill.computerTitle') }}</span>
           <ul>
             <li v-for="(item, index) in computer.link" :key="index">
-              <router-link to="/goodsList">{{item}}</router-link>
+              <router-link to="/goodsList">{{ $t('computer.link.' + item) }}</router-link>
             </li>
           </ul>
         </div>
@@ -61,8 +61,8 @@
             <div class="item-four-img">
               <div class="item-four-detail" v-for="(subItem, index) in item.itemFour" :key="index">
                 <div class="item-four-detail-text">
-                  <p class="pt_bi_tit">{{subItem.title}}</p>
-                  <p class="pt_bi_promo">{{subItem.intro}}</p>
+                  <p class="pt_bi_tit">{{ $t('computer.itemFour.' + subItem.title) }}</p>
+                  <p class="pt_bi_promo">{{ $t('computer.intro.' + subItem.intro) }}</p>
                 </div>
                 <div class="item-four-detail-img">
                   <router-link to="/goodsList">
@@ -84,10 +84,10 @@
       <!-- 爱吃专场 -->
       <div class="item-class">
         <div class="item-class-head item-class-eat-head">
-          <span class="item-class-title">{{eat.title}}</span>
+          <span class="item-class-title">{{ $t('seckill.eatTitle') }}</span>
           <ul>
             <li v-for="(item, index) in eat.link" :key="index">
-              <router-link to="/goodsList">{{item}}</router-link>
+              <router-link to="/goodsList">{{ $t('eat.link.' + item) }}</router-link>
             </li>
           </ul>
         </div>
@@ -99,8 +99,8 @@
             <div class="item-four-img">
               <div class="item-four-detail" v-for="(subItem, index) in item.itemFour" :key="index">
                 <div class="item-four-detail-text">
-                  <p class="pt_bi_tit pt_bi_tit-eat">{{subItem.title}}</p>
-                  <p class="pt_bi_promo">{{subItem.intro}}</p>
+                  <p class="pt_bi_tit pt_bi_tit-eat">{{ $t('eat.itemFour.' + subItem.title) }}</p>
+                  <p class="pt_bi_promo">{{ $t('eat.intro.' + subItem.intro) }}</p>
                 </div>
                 <div class="item-four-detail-img">
                   <router-link to="/goodsList">
@@ -372,6 +372,12 @@ export default {
 .item-big-img img {
   margin-left: 0px;
   transition: margin-left 0.3s;
+  max-width: 290px;
+  max-height: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 .item-big-img:hover img {
   margin-left: -15px;
@@ -444,6 +450,7 @@ export default {
 .item-content-bottom-img img {
   margin-left: 0px;
   transition: margin-left 0.3s;
+  max-height: 130px;
 }
 .item-content-bottom-img:hover img {
   margin-left: -15px;

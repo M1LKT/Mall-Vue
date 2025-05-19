@@ -6,9 +6,9 @@
     <div class="shop-item-path">
       <div class="shop-nav-container">
         <Breadcrumb>
-          <BreadcrumbItem to="/">首页</BreadcrumbItem>
-          <BreadcrumbItem to="/goodsList">手机壳</BreadcrumbItem>
-          <BreadcrumbItem>手机保护套</BreadcrumbItem>
+          <BreadcrumbItem to="/">{{ $t('goodsDetail.home') }}</BreadcrumbItem>
+          <BreadcrumbItem to="/goodsList">{{ $t('goodsDetail.category') }}</BreadcrumbItem>
+          <BreadcrumbItem>{{ $t('goodsDetail.subCategory') }}</BreadcrumbItem>
         </Breadcrumb>
       </div>
     </div>

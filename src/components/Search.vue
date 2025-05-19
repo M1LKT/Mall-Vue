@@ -1,10 +1,22 @@
 <template>
   <div>
     <div class="container">
-      <i-input v-model="sreachData" size="large" class="sreach" placeholder="输入你想查找的商品">
+      <i-input
+        v-model="sreachData"
+        size="large"
+        class="sreach"
+        :placeholder="$t('search.placeholder')"
+      >
         <Button slot="append" icon="ios-search" @click="sreach"></Button>
       </i-input>
-      <Tag v-for="(item, index) in promotionTags" :key="index" closable  @on-close="closeTags(index)"><span @click="selectTags(index)">{{item}}</span></Tag>
+      <Tag
+        v-for="(item, index) in promotionTags"
+        :key="index"
+        closable
+        @on-close="closeTags(index)"
+      >
+        <span @click="selectTags(index)">{{ $t('search.promotionTags.' + item) }}</span>
+      </Tag>
     </div>
   </div>
 </template>
@@ -15,7 +27,13 @@ export default {
   data () {
     return {
       sreachData: '',
-      promotionTags: ['买2免1', '领200神券', '199减100', '母婴5折抢', '充100送20']
+      promotionTags: [
+        'buy2free1',
+        'coupon200',
+        'minus100',
+        'babyHalf',
+        'charge100get20'
+      ]
     };
   },
   methods: {
@@ -23,10 +41,10 @@ export default {
       this.promotionTags.splice(index, 1);
     },
     selectTags (index) {
-      this.sreachData = this.promotionTags[index];
+      this.sreachData = this.$t('search.promotionTags.' + this.promotionTags[index]);
     },
     sreach () {
-      this.$router.push({path: '/goodsList', query: { sreachData: this.sreachData }});
+      this.$router.push({ path: '/goodsList', query: { sreachData: this.sreachData } });
     }
   }
 };

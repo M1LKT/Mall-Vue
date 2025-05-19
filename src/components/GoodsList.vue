@@ -6,10 +6,10 @@
       <div class="bread-crumb">
         <Breadcrumb>
           <BreadcrumbItem to="/">
-            <Icon type="ios-home-outline"></Icon> 首页
+            <Icon type="ios-home-outline"></Icon> {{ $t('goodsList.home') }}
           </BreadcrumbItem>
           <BreadcrumbItem to="/goodsList?sreachData=">
-            <Icon type="bag"></Icon> {{searchItem}}
+            <Icon type="bag"></Icon> {{ searchItem }}
           </BreadcrumbItem>
         </Breadcrumb>
       </div>
@@ -19,8 +19,8 @@
       <div class="goods-box">
         <div class="as-box">
           <div class="item-as-title">
-            <span>商品精选</span>
-            <span>广告</span>
+            <span>{{ $t('goodsList.featured') }}</span>
+            <span>{{ $t('goodsList.ad') }}</span>
           </div>
           <div class="item-as" v-for="(item,index) in asItems" :key="index">
             <div class="item-as-img">
@@ -33,17 +33,21 @@
               </span>
             </div>
             <div class="item-as-intro">
-              <span>{{item.intro}}</span>
+              <span>{{ $t('goodsList.asItems.' + item.intro) }}</span>
             </div>
             <div class="item-as-selled">
-              已有<span>{{item.num}}</span>人评价
+              {{ $t('goodsList.evaluated') }}<span>{{item.num}}</span>{{ $t('goodsList.people') }}
             </div>
           </div>
         </div>
         <div class="goods-list-box">
           <div class="goods-list-tool">
             <ul>
-              <li v-for="(item,index) in goodsTool" :key="index" @click="orderBy(item.en, index)"><span :class="{ 'goods-list-tool-active': isAction[index]}">{{item.title}} <Icon :type="icon[index]"></Icon></span></li>
+              <li v-for="(item,index) in goodsTool" :key="index" @click="orderBy(item.en, index)">
+                <span :class="{ 'goods-list-tool-active': isAction[index]}">
+                  {{ $t('goodsList.tool.' + item.en) }} <Icon :type="icon[index]"></Icon>
+                </span>
+              </li>
             </ul>
           </div>
           <div class="goods-list">
@@ -58,13 +62,13 @@
                 </span>
               </div>
               <div class="goods-show-detail">
-                <span>{{item.intro}}</span>
+                <span>{{ $t('goodsList.goodsList.' + item.intro) }}</span>
               </div>
               <div class="goods-show-num">
-                已有<span>{{item.remarks}}</span>人评价
+                {{ $t('goodsList.evaluated') }}<span>{{item.remarks}}</span>{{ $t('goodsList.people') }}
               </div>
               <div class="goods-show-seller">
-                <span>{{item.shopName}}</span>
+                <span>{{ $t('goodsList.shopName.' + item.shopName) }}</span>
               </div>
             </div>
           </div>
@@ -274,6 +278,25 @@ export default {
   margin-top: 20px;
   display: flex;
   justify-content: flex-end;
+}
+.item-as-img,
+.goods-show-img {
+  max-width: 350px;
+  max-height: 350px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.item-as-img img,
+.goods-show-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 /* ---------------商品栏结束------------------- */
 </style>

@@ -12,86 +12,84 @@
       <div class="nav-side" ref="navSide">
         <ul>
           <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
-            <span class="nav-side-item">家用电器</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.homeAppliance') }}</span>
           </li>
           <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
-            <span class="nav-side-item">手机</span> /
-            <span class="nav-side-item">运营商</span> /
-            <span class="nav-side-item">数码</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.phone') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.operator') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.digital') }}</span>
           </li>
           <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
-            <span class="nav-side-item">电脑</span> /
-            <span class="nav-side-item">办公</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.computer') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.office') }}</span>
           </li>
           <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
-            <span class="nav-side-item">家居</span> /
-            <span class="nav-side-item">家具</span> /
-            <span class="nav-side-item">家装</span> /
-            <span class="nav-side-item">厨具</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.home') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.furniture') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.decoration') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.kitchen') }}</span>
           </li>
           <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
-            <span class="nav-side-item">男装</span> /
-            <span class="nav-side-item">女装</span> /
-            <span class="nav-side-item">童装</span> /
-            <span class="nav-side-item">内衣</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.menClothing') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.underwear') }}</span>
           </li>
           <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
-            <span class="nav-side-item">美妆个护</span> /
-            <span class="nav-side-item">宠物</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.beauty') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.pet') }}</span>
           </li>
           <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
-            <span class="nav-side-item">女鞋</span> /
-            <span class="nav-side-item">箱包</span> /
-            <span class="nav-side-item">钟表</span> /
-            <span class="nav-side-item">珠宝</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.womenShoes') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.bag') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.watch') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.jewelry') }}</span>
           </li>
           <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
-            <span class="nav-side-item">男鞋</span> /
-            <span class="nav-side-item">运动</span> /
-            <span class="nav-side-item">户外</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.menShoes') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.sports') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.outdoor') }}</span>
           </li>
           <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
-            <span class="nav-side-item">汽车</span> /
-            <span class="nav-side-item">汽车用品</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.car') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.carAccessory') }}</span>
           </li>
           <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
-            <span class="nav-side-item">母婴</span> /
-            <span class="nav-side-item">玩具乐器</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.motherBaby') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.toy') }}</span>
           </li>
           <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
-            <span class="nav-side-item">食品</span> /
-            <span class="nav-side-item">酒类</span> /
-            <span class="nav-side-item">生鲜</span> /
-            <span class="nav-side-item">特产</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.food') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.wine') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.freshFood') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.specialty') }}</span>
           </li>
+          <!-- <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
+            <span class="nav-side-item">{{ $t('homeNav.side.gift') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.agriculture') }}</span>
+          </li> -->
+          <!-- <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
+            <span class="nav-side-item">{{ $t('homeNav.side.health') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.adult') }}</span>
+          </li> -->
           <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
-            <span class="nav-side-item">礼品鲜花</span> /
-            <span class="nav-side-item">农资绿植</span>
-          </li>
-          <li @mouseenter="showDetail(1)" @mouseleave="hideDetail(1)">
-            <span class="nav-side-item">医药保健</span> /
-            <span class="nav-side-item">计生情趣</span>
-          </li>
-          <li @mouseenter="showDetail(2)" @mouseleave="hideDetail(2)">
-            <span class="nav-side-item">图书</span> /
-            <span class="nav-side-item">音像</span> /
-            <span class="nav-side-item">电子书</span>
+            <span class="nav-side-item">{{ $t('homeNav.side.book') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.audio') }}</span> /
+            <span class="nav-side-item">{{ $t('homeNav.side.ebook') }}</span>
           </li>
         </ul>
       </div>
       <div class="nav-content">
         <!-- 幻灯片 -->
         <div>
-          <Carousel autoplay loop>
+          <Carousel autoplay loop class="carousel" >
               <CarouselItem  v-for="(item, index) in marketing.CarouselItems" :key="index">
                 <router-link to="/goodsList">
-                  <img :src="item">
+                  <img :src="item" style="  max-width: 1180px;max-height: 340px;width: 100%;height: auto;">
                 </router-link>
               </CarouselItem>
           </Carousel>
         </div>
         <div class="nav-show">
-          <div class="nav-show-img" v-for="(item, index) in marketing.activity" :key="index">
+          <div class="nav-show-img" v-for="(item, index) in marketing.activity" :key="index" >
             <router-link to="/goodsList">
               <img :src="item">
             </router-link>
@@ -102,15 +100,15 @@
     <transition name="fade">
       <div class="detail-item-panel panel-1" :duration="{ enter: 100, leave: 100 }" v-show="panel1" @mouseenter="showDetail(1)" ref="itemPanel1" @mouseleave="hideDetail(1)">
         <div class="nav-detail-item">
-          <span v-for="(item, index) in panelData1.navTags" :key="index">{{item}} > </span>
+          <span v-for="(item, index) in panelData1.navTags" :key="index">{{ $t('homeNav.panel1.navTags.' + item) }} > </span>
         </div>
         <ul>
           <li v-for="(items, index) in panelData1.classNav" :key="index" class="detail-item-row">
-            <span class="detail-item-title">{{items.title}}
+            <span class="detail-item-title">{{ $t('homeNav.panel1.classNav.' + items.title) }}
               <span class="glyphicon glyphicon-menu-right"></span>
             </span>
             <router-link to="/goodsList" v-for="(item, subIndex) in items.tags" :key="subIndex">
-              <span class="detail-item">{{item}}</span>
+              <span class="detail-item">{{ $t('homeNav.panel1.tags.' + item) }}</span>
             </router-link>
           </li>
         </ul>
@@ -119,15 +117,15 @@
     <transition name="fade">
       <div class="detail-item-panel panel-2" :duration="{ enter: 100, leave: 100 }" v-show="panel2" @mouseenter="showDetail(2)" ref="itemPanel2" @mouseleave="hideDetail(2)">
         <div class="nav-detail-item">
-          <span v-for="(item, index) in panelData2.navTags" :key="index">{{item}} > </span>
+          <span v-for="(item, index) in panelData2.navTags" :key="index">{{ $t('homeNav.panel2.navTags.' + item) }} > </span>
         </div>
         <ul>
           <li v-for="(items, index) in panelData2.classNav" :key="index" class="detail-item-row">
-            <span class="detail-item-title">{{items.title}}
+            <span class="detail-item-title">{{ $t('homeNav.panel2.classNav.' + items.title) }}
               <span class="glyphicon glyphicon-menu-right"></span>
             </span>
             <router-link to="/goodsList" v-for="(item, subIndex) in items.tags" :key="subIndex">
-              <span class="detail-item">{{item}}</span>
+              <span class="detail-item">{{ $t('homeNav.panel2.tags.' + item) }}</span>
             </router-link>
           </li>
         </ul>
@@ -146,111 +144,83 @@ export default {
       panel1: false,
       panel2: false,
       nav: [
-        '秒杀',
-        '优惠券',
-        '闪购',
-        '拍卖',
-        '服装城',
-        '超市',
-        '生鲜',
-        '全球购',
-        '金融'
+        // 'seckill', 'coupon', 'flash', 'auction', 'clothing', 'supermarket', 'fresh', 'global', 'finance'
       ],
       panelData1: {
-        navTags: [ '清洁用品', '美妆商城', '美妆馆', '妆比社', '全球购美妆', '宠物馆' ],
+        navTags: [ 'clean', 'beautyMall', 'beautyHall', 'beautyClub', 'globalBeauty', 'petHall' ],
         classNav: [
           {
-            title: '面部护肤',
-            tags: [ '补水保湿', '卸妆', '洁面', '爽肤水', '乳液面霜', '精华', '眼霜', '防晒', '面膜', '剃须', '套装' ]
+            title: 'faceCare',
+            tags: [ 'moisturize', 'removeMakeup', 'cleanser', 'toner', 'lotion', 'essence', 'eyeCream', 'sunscreen', 'mask', 'shaving', 'set' ]
           },
           {
-            title: '洗发护发',
-            tags: [ '洗发', '护发', '染发', '造型', '假发', '美发工具', '套装' ]
+            title: 'hairCare',
+            tags: [ 'shampoo', 'conditioner', 'hairDye', 'styling', 'wig', 'hairTool', 'set' ]
           },
           {
-            title: '身体护理',
-            tags: [ '补水保湿', '沐浴', '润肤', '精油', '颈部', '手足', '纤体塑形', '美胸', '套装' ]
+            title: 'bodyCare',
+            tags: [ 'moisturize', 'bath', 'bodyLotion', 'essentialOil', 'neck', 'handFoot', 'shape', 'breast', 'set' ]
           },
           {
-            title: '口腔护理',
-            tags: [ '牙膏/牙粉', '牙刷/牙线', '漱口水', '套装' ]
+            title: 'oralCare',
+            tags: [ 'toothpaste', 'toothbrush', 'mouthwash', 'set' ]
           },
           {
-            title: '女性护理',
-            tags: [ '卫生巾', '卫生护垫', '私密护理', '脱毛膏' ]
+            title: 'femaleCare',
+            tags: [ 'sanitaryNapkin', 'pantyLiner', 'privateCare', 'depilatory' ]
           },
           {
-            title: '香水彩妆',
-            tags: [ 'BB霜', '化妆棉', '女士香水', '男士香水', '底妆', '眉笔', '睫毛膏', '眼线', '眼影', '唇膏/彩' ]
+            title: 'perfumeMakeup',
+            tags: [ 'bbCream', 'cottonPad', 'womenPerfume', 'menPerfume', 'foundation', 'eyebrowPencil', 'mascara', 'eyeliner', 'eyeShadow', 'lipstick' ]
           },
           {
-            title: '清洁用品',
-            tags: [ '纸品湿巾', '衣物清洁', '清洁工具', '家庭清洁', '一次性用品', '驱虫用品', '皮具护理' ]
+            title: 'clean',
+            tags: [ 'wetWipes', 'clothesClean', 'cleanTool', 'homeClean', 'disposable', 'insectRepellent', 'leatherCare' ]
           },
           {
-            title: '宠物生活',
-            tags: [ '水族世界', '狗粮', '猫粮', '猫狗罐头', '狗零食', '猫零食', '医疗保健', '宠物玩具', '宠物服饰' ]
-          },
-          {
-            title: '香水彩妆',
-            tags: [ 'BB霜', '化妆棉', '女士香水', '男士香水', '底妆', '眉笔', '睫毛膏', '眼线', '眼影', '唇膏/彩' ]
-          },
-          {
-            title: '清洁用品',
-            tags: [ '纸品湿巾', '衣物清洁', '清洁工具', '家庭清洁', '一次性用品', '驱虫用品', '皮具护理' ]
-          },
-          {
-            title: '宠物生活',
-            tags: [ '水族世界', '狗粮', '猫粮', '猫狗罐头', '狗零食', '猫零食', '医疗保健', '宠物玩具', '宠物服饰' ]
+            title: 'petLife',
+            tags: [ 'aquarium', 'dogFood', 'catFood', 'cannedFood', 'dogSnack', 'catSnack', 'petHealth', 'petToy', 'petClothes' ]
           }
         ]
       },
       panelData2: {
-        navTags: [ '赛事', '运动城', '户外馆', '健身房', '骑行馆', '钟表城' ],
+        navTags: [ 'sportsEvent', 'sportsMall', 'outdoorHall', 'gym', 'cyclingHall', 'watchMall' ],
         classNav: [
           {
-            title: '2017新品',
-            tags: [ '休闲鞋', '商务休闲鞋', '正装鞋', '帆布鞋', '凉鞋', '拖鞋', '功能鞋', '增高鞋', '工装鞋', '雨鞋' ]
+            title: 'new2017',
+            tags: [ 'casualShoes', 'businessShoes', 'formalShoes', 'canvasShoes', 'sandals', 'slippers', 'functionShoes', 'heightShoes', 'workShoes', 'rainShoes' ]
           },
           {
-            title: '运动鞋包',
-            tags: [ '跑步鞋', '休闲鞋', '篮球鞋', '帆布鞋', '板鞋', '拖鞋', '运动包' ]
+            title: 'sportsShoesBag',
+            tags: [ 'runningShoes', 'casualShoes', 'basketballShoes', 'canvasShoes', 'boardShoes', 'slippers', 'sportsBag' ]
           },
           {
-            title: '健身训练',
-            tags: [ '跑步机', '健身车/动感单车', '椭圆机', '综合训练器', '划船机', '甩脂机', '倒立机', '武术搏击' ]
+            title: 'fitness',
+            tags: [ 'treadmill', 'exerciseBike', 'elliptical', 'trainer', 'rowingMachine', 'fatShaker', 'inversionMachine', 'martialArts' ]
           },
           {
-            title: '骑行运动',
-            tags: [ '山地车', '公路车', '折叠车', '骑行服', '电动车', '电动滑板车', '城市自行车', '平衡车' ]
+            title: 'cycling',
+            tags: [ 'mountainBike', 'roadBike', 'foldingBike', 'cyclingClothes', 'electricBike', 'electricScooter', 'cityBike', 'balanceBike' ]
           },
           {
-            title: '体育用品',
-            tags: [ '乒乓球', '羽毛球', '篮球', '足球', '轮滑滑板', '网球', '高尔夫', '台球', '排球' ]
+            title: 'sportsGoods',
+            tags: [ 'pingpong', 'badminton', 'basketball', 'football', 'rollerSkate', 'tennis', 'golf', 'billiards', 'volleyball' ]
           },
           {
-            title: '户外鞋服',
-            tags: [ '户外风衣', '徒步鞋', 'T恤', '冲锋衣裤', '速干衣裤', '越野跑鞋', '滑雪服', '羽绒服/棉服', '休闲衣裤' ]
+            title: 'outdoorWear',
+            tags: [ 'outdoorJacket', 'hikingShoes', 'tshirt', 'jacketPants', 'quickDry', 'trailRunning', 'skiSuit', 'downJacket', 'casualWear' ]
           },
           {
-            title: '户外装备',
-            tags: [ '背包', '帐篷/垫子', '望远镜', '烧烤用具', '便携桌椅床', '户外配饰', '军迷用品', '野餐用品' ]
+            title: 'outdoorEquip',
+            tags: [ 'backpack', 'tent', 'binoculars', 'bbq', 'portableTable', 'outdoorAccessory', 'military', 'picnic' ]
           },
           {
-            title: '垂钓用品',
-            tags: [ '钓竿', '鱼线', '浮漂', '鱼饵', '钓鱼配件', '渔具包', '钓箱钓椅', '鱼线轮', '钓鱼灯' ]
+            title: 'fishing',
+            tags: [ 'fishingRod', 'fishingLine', 'float', 'bait', 'fishingAccessory', 'fishingBag', 'fishingBox', 'reel', 'fishingLamp' ]
           },
           {
-            title: '游泳用品',
-            tags: [ '女士泳衣', '比基尼', '男士泳衣', '泳镜', '游泳圈', '游泳包防水包', '泳帽', '游泳配件' ]
-          },
-          {
-            title: '垂钓用品',
-            tags: [ '钓竿', '鱼线', '浮漂', '鱼饵', '钓鱼配件', '渔具包', '钓箱钓椅', '鱼线轮', '钓鱼灯' ]
-          },
-          {
-            title: '游泳用品',
-            tags: [ '女士泳衣', '比基尼', '男士泳衣', '泳镜', '游泳圈', '游泳包防水包', '泳帽', '游泳配件' ]
+            title: 'swimming',
+            tags: [ 'womenSwimsuit', 'bikini', 'menSwimsuit', 'goggles', 'swimRing', 'swimBag', 'swimCap', 'swimAccessory' ]
           }
         ]
       }
@@ -354,8 +324,21 @@ export default {
 }
 /*导航图片*/
 .nav-show-img {
-  margin-top: 10px;
+  margin-top: 30px;
   float: left;
+  width: 390px;      /* 固定宽度 */
+  height: 120px;     /* 固定高度 */
+  background: #fff;  /* 可选，便于观察效果 */
+  display: flex;     /* 让图片居中 */
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-show-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 .nav-show-img:nth-child(2) {
   margin-left: 12px;
@@ -422,4 +405,37 @@ export default {
 .detail-item:hover {
   color: #d9534f;
 }
+/* 英文环境下字体和间距变小 */
+.lang-en .nav-side,
+.lang-en .nav-side-item,
+.lang-en .detail-item-panel,
+.lang-en .detail-item-title,
+.lang-en .detail-item {
+  font-size: 12px !important;
+  line-height: 16px !important;
+  letter-spacing: 0 !important;
+}
+.lang-zh .nav-side,
+.lang-zh .nav-side-item,
+.lang-zh .detail-item-panel,
+.lang-zh .detail-item-title,
+.lang-zh .detail-item {
+  line-height: 24px !important;
+  letter-spacing: 0 !important;
+}
+/* .carousel img,
+.carousel-item img,
+.carousel-item,
+.carousel,
+.carousel .ivu-carousel,
+.carousel .ivu-carousel-item {
+  max-width: 1180px;
+  max-height: 510px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+} */
+
 </style>
